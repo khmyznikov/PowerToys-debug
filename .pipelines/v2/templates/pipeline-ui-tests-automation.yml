@@ -36,7 +36,7 @@ parameters:
     default: []
   - name: pool
     type: string
-    default: 'SHINE-OSS-Testing-arm64-selfhost'
+    default: 'testing-arm64-selfhost'
 
 stages:
   - ${{ each platform in parameters.buildPlatforms }}:
