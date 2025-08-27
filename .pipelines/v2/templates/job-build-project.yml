@@ -30,8 +30,8 @@ parameters:
     type: object
     default: []
   - name: pool
-    type: object
-    default: []
+    type: string
+    default: ''
   - name: beforeBuildSteps
     type: stepList
     default: []
@@ -93,8 +93,7 @@ parameters:
 
 jobs:
 - job: ${{ parameters.jobName }}
-  ${{ if ne(length(parameters.pool), 0) }}:
-    pool: ${{ parameters.pool }}
+  pool: ${{ parameters.pool }}
   dependsOn: ${{ parameters.dependsOn }}
   condition: ${{ parameters.condition }}
   strategy:
